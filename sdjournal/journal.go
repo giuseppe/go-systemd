@@ -29,6 +29,13 @@ package sdjournal
 // #include <stdlib.h>
 // #include <syslog.h>
 //
+// #ifndef _SD_ARRAY_STATIC
+// #  if __STDC_VERSION__ >= 199901L
+// #    define _SD_ARRAY_STATIC static
+// #  else
+// #    define _SD_ARRAY_STATIC
+// #  endif
+// #endif
 // int
 // my_sd_journal_open(void *f, sd_journal **ret, int flags)
 // {
